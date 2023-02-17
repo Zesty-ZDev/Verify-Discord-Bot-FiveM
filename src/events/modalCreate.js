@@ -52,8 +52,9 @@ else{
     let user = interaction.guild.members.cache.get(interaction.user.id);
     user.setNickname(NickNameString)}
 }
-
-       //Deny Reason Modal Submit
+        }
+        
+               //Deny Reason Modal Submit
        if (!interaction.isModalSubmit()) return;
        if (interaction.customId === 'DenyStaffModal') {
            let reasondeny = interaction.fields.getTextInputValue('DenialReasonTextInput')
@@ -79,7 +80,5 @@ else{
                            client.users.send(userIDGLOBAL,{embeds:[DenyNotifyEmbed]})
                            interaction.update({embeds:[DenyUpdateStaffEmbed], components:[DenyUpdateButton], ephemeral: true})
        } 
-
-        }
     }
 }
