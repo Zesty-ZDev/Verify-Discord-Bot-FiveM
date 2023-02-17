@@ -18,7 +18,7 @@ This will set the role the bot will give when the users verification request is 
 
 #### What is "color" in the config.json?
 
-This sets the color of all the embeds the bot will send including the "Verify" button embed and the staff request embeds
+This sets the color of all the embeds the bot will send including the "Verify" button embed and the staff request embeds, this value has to be a color hex for example "#9aaae3"
 
 #### Why am I getting permission errors?
 
