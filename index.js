@@ -1,5 +1,5 @@
 const { Client, Collection, GatewayIntentBits, Partials } = require("discord.js");
-const client = new Client({intents:['Guilds']});
+const client = new Client({intents:['Guilds', 'GuildMembers']});
 const config = require("./config.json");
 const { readdirSync } = require("fs")
 const { REST } = require('@discordjs/rest');

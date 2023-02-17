@@ -1,6 +1,7 @@
 {
     "token": "",
     "staffchannel": "",
-    "verifiedrole": "",
+    "roletoremove": "",
+    "roletoadd": "",
     "color": ""
   }

@@ -33,15 +33,22 @@ module.exports = {
                     if (interaction.isButton()) {
                         if (interaction.customId.includes(`ButtonVerifyEntryStaff-`)) {
                             const userID = interaction.customId.slice(23)
+
                             let guild = client.guilds.cache.get(interaction.guild.id)
-                            let member = guild.members.fetch(userID)
+
+                            guild.members.fetch()
+                            if (guild.members.cache.has(userID)){
+                                
+
+                                let member = guild.members.fetch(userID)
 
                             const VerifyButtonUpdateEmbed = new EmbedBuilder()
                             .setDescription(`<@${userID}> is now verified`) 
                             .setTitle(`${client.user.username}`)
                             .setColor(config.color)
                             .setFooter({text:`${client.user.username} by Quest Systems`})
-                            const VerifyUpdateButton = new ActionRowBuilder()
+
+                            const LinkButton = new ActionRowBuilder()
                             .addComponents(
                                 new ButtonBuilder()
                                 .setLabel('Quest Systems Discord')
@@ -50,14 +57,36 @@ module.exports = {
                                 .setStyle('Link'),
                             );
 
-
-                            interaction.update({embeds:[VerifyButtonUpdateEmbed], components:[VerifyUpdateButton]})
                             member.then(function(result) {
-                                result.roles.add(config.verifiedrole);
-                             })
+                                //Checks if roletoadd is empty
+                                if (!config.roletoadd == ``){
+                                result.roles.add(config.roletoadd)}
 
-                             
+                                //Checks if roletoremove is empty
+                                if (!config.roletoremove == ``){
+                                result.roles.remove(config.roletoremove)}
+                                
+                                interaction.update({embeds:[VerifyButtonUpdateEmbed], components:[LinkButton]})
+                                });
 
+                            } 
+                            else{
+                                const ErrorUpdateEmbed = new EmbedBuilder()
+                                .setDescription(`<@${userID}> is no longer in the discord!`) 
+                                .setTitle(`${client.user.username}`)
+                                .setColor(config.color)
+                                .setFooter({text:`${client.user.username} by Quest Systems`})
+                                const LinkButton = new ActionRowBuilder()
+                                .addComponents(
+                                    new ButtonBuilder()
+                                    .setLabel('Quest Systems Discord')
+                                    //.setEmoji('')
+                                    .setURL('https://discord.gg/9T7p9HjTQt')
+                                    .setStyle('Link'),
+                                );
+                                interaction.update({embeds:[ErrorUpdateEmbed], components:[LinkButton]})
+                            }                                                             
+   
                         }}
 
                         if (interaction.isButton()) {
@@ -76,33 +105,6 @@ module.exports = {
                         DenyReason.addComponents(DenialReasonActionRow)
                             interaction.showModal(DenyReason)
                             }}
-
-                            //modal below
-                            if (!interaction.isModalSubmit()) return;
-        if (interaction.customId === 'DenyStaffModal') {
-            let reasondeny = interaction.fields.getTextInputValue('DenialReasonTextInput')
-                            const DenyNotifyEmbed = new EmbedBuilder()
-                            .setDescription(`<@${userIDGLOBAL}> you were denied from the verification for the reason below:\n ${reasondeny}`) 
-                            .setTitle(`${client.user.username}`)
-                            .setColor(config.color)
-                            .setFooter({text:`${client.user.username} by Quest Systems`})
-
-                            const DenyUpdateStaffEmbed = new EmbedBuilder()
-                            .setDescription(`<@${userIDGLOBAL}> was denied from the verification for the reason below:\n ${reasondeny}`) 
-                            .setTitle(`${client.user.username}`)
-                            .setColor(config.color)
-                            .setFooter({text:`${client.user.username} by Quest Systems`})
-                            const DenyUpdateButton = new ActionRowBuilder()
-                            .addComponents(
-                                new ButtonBuilder()
-                                .setLabel('Quest Systems Discord')
-                                //.setEmoji('')
-                                .setURL('https://discord.gg/9T7p9HjTQt')
-                                .setStyle('Link'),
-                            );
-                            client.users.send(userIDGLOBAL,{embeds:[DenyNotifyEmbed]})
-                            interaction.update({embeds:[DenyUpdateStaffEmbed], components:[DenyUpdateButton], ephemeral: true})
-        }
 
         }
     }

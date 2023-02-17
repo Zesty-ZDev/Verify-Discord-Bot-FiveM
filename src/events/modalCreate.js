@@ -5,7 +5,7 @@ module.exports = {
     name: 'interactionCreate',
     execute: async (interaction) => {
         let client = interaction.client;
-//Modal Submit
+//Nickname Modal Submit
         if (!interaction.isModalSubmit()) return;
         if (interaction.customId === 'VerifyModal') {
             let CharacterNameValue = interaction.fields.getTextInputValue('CharacterNameTextInput')
@@ -52,7 +52,34 @@ else{
     let user = interaction.guild.members.cache.get(interaction.user.id);
     user.setNickname(NickNameString)}
 }
-              
+
+       //Deny Reason Modal Submit
+       if (!interaction.isModalSubmit()) return;
+       if (interaction.customId === 'DenyStaffModal') {
+           let reasondeny = interaction.fields.getTextInputValue('DenialReasonTextInput')
+                           const DenyNotifyEmbed = new EmbedBuilder()
+                           .setDescription(`<@${userIDGLOBAL}> you were denied from the verification for the reason below:\n ${reasondeny}`) 
+                           .setTitle(`${client.user.username}`)
+                           .setColor(config.color)
+                           .setFooter({text:`${client.user.username} by Quest Systems`})
+
+                           const DenyUpdateStaffEmbed = new EmbedBuilder()
+                           .setDescription(`<@${userIDGLOBAL}> was denied from the verification for the reason below:\n ${reasondeny}`) 
+                           .setTitle(`${client.user.username}`)
+                           .setColor(config.color)
+                           .setFooter({text:`${client.user.username} by Quest Systems`})
+                           const DenyUpdateButton = new ActionRowBuilder()
+                           .addComponents(
+                               new ButtonBuilder()
+                               .setLabel('Quest Systems Discord')
+                               //.setEmoji('')
+                               .setURL('https://discord.gg/9T7p9HjTQt')
+                               .setStyle('Link'),
+                           );
+                           client.users.send(userIDGLOBAL,{embeds:[DenyNotifyEmbed]})
+                           interaction.update({embeds:[DenyUpdateStaffEmbed], components:[DenyUpdateButton], ephemeral: true})
+       } 
+
         }
     }
 }
