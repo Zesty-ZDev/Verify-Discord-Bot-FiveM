@@ -1,7 +1,7 @@
 
-# Quest Verify Bot
+#Verify Bot by ZDev
 
-Quest Verify Bot will ensure users that join your FiveM Discord Community change their nick name to match the format "CharacterName [SteamName]" with a manual approval system with buttons sent to staff in a staff channel
+Verify Bot will ensure users that join your FiveM Discord Community change their nick name to match the format "CharacterName [SteamName]" with a manual approval system with buttons sent to staff in a staff channel
 
 
 
