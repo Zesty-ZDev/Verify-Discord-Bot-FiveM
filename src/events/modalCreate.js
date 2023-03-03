@@ -15,15 +15,15 @@ module.exports = {
 
       const VerifyEmbed = new EmbedBuilder()
       .setDescription(`Your server profile is now set to: \n${NickNameString} \n\n *You will be verified once a staff membed accepts the request!*`) 
-      .setTitle(`${client.user.username} | Quest Systems`)
+      .setTitle(`${client.user.username} | Z-Dev`)
       .setColor(config.color)
-      .setFooter({text:`${client.user.username} by Quest Systems`})
+      .setFooter({text:`${client.user.username} by Z-Dev`})
 
       const VerifyRequest = new EmbedBuilder()
       .setDescription(`<@${interaction.user.id}> has requested verification and has set their name to: \n\`${NickNameString}\` \n\n *Click the "Verify" Button below to verify the user or click "Deny" to notify the user something is wrong * `) 
       .setTitle(`${client.user.username}`)
       .setColor(config.color)
-      .setFooter({text:`${client.user.username} by Quest Systems`})
+      .setFooter({text:`${client.user.username} by Z-Dev`})
       const StaffVerifyButton = new ActionRowBuilder()
       .addComponents(
           new ButtonBuilder()
@@ -62,19 +62,19 @@ else{
                            .setDescription(`<@${userIDGLOBAL}> you were denied from the verification for the reason below:\n ${reasondeny}`) 
                            .setTitle(`${client.user.username}`)
                            .setColor(config.color)
-                           .setFooter({text:`${client.user.username} by Quest Systems`})
+                           .setFooter({text:`${client.user.username} by Z-Dev`})
 
                            const DenyUpdateStaffEmbed = new EmbedBuilder()
                            .setDescription(`<@${userIDGLOBAL}> was denied from the verification for the reason below:\n ${reasondeny}`) 
                            .setTitle(`${client.user.username}`)
                            .setColor(config.color)
-                           .setFooter({text:`${client.user.username} by Quest Systems`})
+                           .setFooter({text:`${client.user.username} by Z-Dev`})
                            const DenyUpdateButton = new ActionRowBuilder()
                            .addComponents(
                                new ButtonBuilder()
-                               .setLabel('Quest Systems Discord')
+                               .setLabel('Z-Dev Discord')
                                //.setEmoji('')
-                               .setURL('https://discord.gg/9T7p9HjTQt')
+                               .setURL('https://discord.gg/5ernDVrE6D')
                                .setStyle('Link'),
                            );
                            client.users.send(userIDGLOBAL,{embeds:[DenyNotifyEmbed]})

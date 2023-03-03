@@ -46,14 +46,14 @@ module.exports = {
                             .setDescription(`<@${userID}> is now verified`) 
                             .setTitle(`${client.user.username}`)
                             .setColor(config.color)
-                            .setFooter({text:`${client.user.username} by Quest Systems`})
+                            .setFooter({text:`${client.user.username} by Z-Dev`})
 
                             const LinkButton = new ActionRowBuilder()
                             .addComponents(
                                 new ButtonBuilder()
-                                .setLabel('Quest Systems Discord')
+                                .setLabel('Z-Dev Discord')
                                 //.setEmoji('')
-                                .setURL('https://discord.gg/9T7p9HjTQt')
+                                .setURL('https://discord.gg/5ernDVrE6D')
                                 .setStyle('Link'),
                             );
 
@@ -75,13 +75,13 @@ module.exports = {
                                 .setDescription(`<@${userID}> is no longer in the discord!`) 
                                 .setTitle(`${client.user.username}`)
                                 .setColor(config.color)
-                                .setFooter({text:`${client.user.username} by Quest Systems`})
+                                .setFooter({text:`${client.user.username} by Z-Dev`})
                                 const LinkButton = new ActionRowBuilder()
                                 .addComponents(
                                     new ButtonBuilder()
-                                    .setLabel('Quest Systems Discord')
+                                    .setLabel('Z-Dev Discord')
                                     //.setEmoji('')
-                                    .setURL('https://discord.gg/9T7p9HjTQt')
+                                    .setURL('https://discord.gg/5ernDVrE6D')
                                     .setStyle('Link'),
                                 );
                                 interaction.update({embeds:[ErrorUpdateEmbed], components:[LinkButton]})
