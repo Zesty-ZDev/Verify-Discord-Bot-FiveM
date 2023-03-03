@@ -15,9 +15,9 @@ module.exports = {
 
       const VerifyEmbed = new EmbedBuilder()
       .setDescription(`Your server profile is now set to: \n${NickNameString} \n\n *You are now verified!*`) 
-      .setTitle(`${client.user.username} | Quest Systems`)
+      .setTitle(`${client.user.username} | Z-Dev`)
       .setColor(config.color)
-      .setFooter({text:`${client.user.username} by Quest Systems`})
+      .setFooter({text:`${client.user.username} by Z-Dev`})
 
 
               if (NickNameString.length > 32 ){

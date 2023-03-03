@@ -13,7 +13,7 @@ module.exports = {
       .setDescription(`Verify by clicking the button below!`) 
       .setTitle(`${client.user.username}`)
       .setColor(config.color)
-      .setFooter({text:`${client.user.username} by Quest Systems`})
+      .setFooter({text:`${client.user.username} by Z-Dev`})
       const VerifyButton = new ActionRowBuilder()
       .addComponents(
           new ButtonBuilder()

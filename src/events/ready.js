@@ -3,6 +3,6 @@ module.exports = {
 	name: 'ready',
 	once: true,
 	execute(client) {
-    let activities = [ `Quest Systems`, `${client.user.username}` ], i = 0;
+    let activities = [ `Z-Dev`, `${client.user.username}` ], i = 0;
     setInterval(() => client.user.setActivity({ name: `${activities[i++ % activities.length]}`, type: ActivityType.Watching }), 22000);
 }};
