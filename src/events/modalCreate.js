@@ -65,7 +65,7 @@ else{
                            .setFooter({text:`${client.user.username} by Z-Dev`})
 
                            const DenyUpdateStaffEmbed = new EmbedBuilder()
-                           .setDescription(`<@${userIDGLOBAL}> was denied from the verification for the reason below:\n ${reasondeny}`) 
+                           .setDescription(`<@${userIDGLOBAL}> was denied from the verification for the reason below:\n ${reasondeny} \n\nDenied by ${interaction.user.id}`) 
                            .setTitle(`${client.user.username}`)
                            .setColor(config.color)
                            .setFooter({text:`${client.user.username} by Z-Dev`})
@@ -73,8 +73,8 @@ else{
                            .addComponents(
                                new ButtonBuilder()
                                .setLabel('Z-Dev Discord')
-                               //.setEmoji('')
-                               .setURL('https://discord.gg/5ernDVrE6D')
+                               .setEmoji('1083979315328335944')
+                               .setURL('https://discord.gg/aECYfwUq9P')
                                .setStyle('Link'),
                            );
                            client.users.send(userIDGLOBAL,{embeds:[DenyNotifyEmbed]})

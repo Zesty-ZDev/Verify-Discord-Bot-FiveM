@@ -52,7 +52,7 @@ module.exports = {
                             .addComponents(
                                 new ButtonBuilder()
                                 .setLabel('Z-Dev Discord')
-                                //.setEmoji('')
+                                .setEmoji('1083979315328335944')
                                 .setURL('https://discord.gg/aECYfwUq9P')
                                 .setStyle('Link'),
                             );
@@ -80,7 +80,7 @@ module.exports = {
                                 .addComponents(
                                     new ButtonBuilder()
                                     .setLabel('Z-Dev Discord')
-                                    //.setEmoji('')
+                                    .setEmoji('1083979315328335944')
                                     .setURL('https://discord.gg/aECYfwUq9P')
                                     .setStyle('Link'),
                                 );
