@@ -43,7 +43,7 @@ module.exports = {
                                 let member = guild.members.fetch(userID)
 
                             const VerifyButtonUpdateEmbed = new EmbedBuilder()
-                            .setDescription(`<@${userID}> is now verified \n\n Verified by <@{$interaction.user.id}>`) 
+                            .setDescription(`<@${userID}> is now verified \n\n Verified by <@${interaction.user.id}>`) 
                             .setTitle(`${client.user.username}`)
                             .setColor(config.color)
                             .setFooter({text:`${client.user.username} by Z-Dev`})
