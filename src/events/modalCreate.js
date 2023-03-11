@@ -65,7 +65,7 @@ else{
                            .setFooter({text:`${client.user.username} by Z-Dev`})
 
                            const DenyUpdateStaffEmbed = new EmbedBuilder()
-                           .setDescription(`<@${userIDGLOBAL}> was denied from the verification for the reason below:\n ${reasondeny} \n\nDenied by ${interaction.user.id}`) 
+                           .setDescription(`<@${userIDGLOBAL}> was denied from the verification for the reason below:\n ${reasondeny} \n\nDenied by <@${interaction.user.id}>`) 
                            .setTitle(`${client.user.username}`)
                            .setColor(config.color)
                            .setFooter({text:`${client.user.username} by Z-Dev`})
