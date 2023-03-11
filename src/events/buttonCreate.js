@@ -43,7 +43,7 @@ module.exports = {
                                 let member = guild.members.fetch(userID)
 
                             const VerifyButtonUpdateEmbed = new EmbedBuilder()
-                            .setDescription(`<@${userID}> is now verified`) 
+                            .setDescription(`<@${userID}> is now verified \n\n Verified by <@{$interaction.user.id}>`) 
                             .setTitle(`${client.user.username}`)
                             .setColor(config.color)
                             .setFooter({text:`${client.user.username} by Z-Dev`})
@@ -53,7 +53,7 @@ module.exports = {
                                 new ButtonBuilder()
                                 .setLabel('Z-Dev Discord')
                                 //.setEmoji('')
-                                .setURL('https://discord.gg/5ernDVrE6D')
+                                .setURL('https://discord.gg/aECYfwUq9P')
                                 .setStyle('Link'),
                             );
 
@@ -81,7 +81,7 @@ module.exports = {
                                     new ButtonBuilder()
                                     .setLabel('Z-Dev Discord')
                                     //.setEmoji('')
-                                    .setURL('https://discord.gg/5ernDVrE6D')
+                                    .setURL('https://discord.gg/aECYfwUq9P')
                                     .setStyle('Link'),
                                 );
                                 interaction.update({embeds:[ErrorUpdateEmbed], components:[LinkButton]})
