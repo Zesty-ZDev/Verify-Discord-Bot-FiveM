@@ -51,9 +51,9 @@ module.exports = {
                             const LinkButton = new ActionRowBuilder()
                             .addComponents(
                                 new ButtonBuilder()
-                                .setLabel('Z-Dev Discord')
+                                .setLabel('Z-Dev Github')
                                 .setEmoji('1083979315328335944')
-                                .setURL('https://discord.gg/aECYfwUq9P')
+                                .setURL('https://github.com/Zesty-ZDev')
                                 .setStyle('Link'),
                             );
 
@@ -79,9 +79,9 @@ module.exports = {
                                 const LinkButton = new ActionRowBuilder()
                                 .addComponents(
                                     new ButtonBuilder()
-                                    .setLabel('Z-Dev Discord')
+                                    .setLabel('Z-Dev Github')
                                     .setEmoji('1083979315328335944')
-                                    .setURL('https://discord.gg/aECYfwUq9P')
+                                    .setURL('https://github.com/Zesty-ZDev')
                                     .setStyle('Link'),
                                 );
                                 interaction.update({embeds:[ErrorUpdateEmbed], components:[LinkButton]})
