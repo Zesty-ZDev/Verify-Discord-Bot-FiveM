@@ -3,7 +3,7 @@
 The Verify Bot will ensure users that join your FiveM Discord Community change their nick name to match the format "CharacterName [SteamName]" with a manual approval system with buttons sent to staff in a staff channel
 
 ### Z-Dev Discord
-Join [Here](https://discord.gg/5ernDVrE6D) for support
+Join [Here](https://discord.gg/EV9cpmp6qf) for support
 
 
 ## FAQ
