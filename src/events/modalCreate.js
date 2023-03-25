@@ -77,8 +77,11 @@ else{
                                .setURL('https://github.com/Zesty-ZDev')
                                .setStyle('Link'),
                            );
+
+                           interaction.update({embeds:[DenyUpdateStaffEmbed], components:[DenyUpdateButton]})
                            client.users.send(userIDGLOBAL,{embeds:[DenyNotifyEmbed]})
-                           interaction.update({embeds:[DenyUpdateStaffEmbed], components:[DenyUpdateButton], ephemeral: true})
+                           .catch (() => interaction.channel.send({content: `<@${userIDGLOBAL}> could not be contacted via DM's thus they could not be informed of the denial reason`}))
+                           
        } 
     }
 }

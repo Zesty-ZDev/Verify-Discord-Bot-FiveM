@@ -91,7 +91,10 @@ module.exports = {
 
                         if (interaction.isButton()) {
                             if (interaction.customId.includes(`ButtonDenyEntryStaff-`)) {
+                                let guild = client.guilds.cache.get(interaction.guild.id)
                                 global.userIDGLOBAL = interaction.customId.slice(21)
+                                guild.members.fetch()
+                                if (guild.members.cache.has(userIDGLOBAL)){
                                 const DenyReason = new ModalBuilder()
                             .setCustomId('DenyStaffModal')
                             .setTitle('Denial Reason');
@@ -104,7 +107,25 @@ module.exports = {
                         const DenialReasonActionRow = new ActionRowBuilder().addComponents(DenialReasonInput);
                         DenyReason.addComponents(DenialReasonActionRow)
                             interaction.showModal(DenyReason)
-                            }}
+                            }
+                            else{
+                                const ErrorUpdateEmbed = new EmbedBuilder()
+                                .setDescription(`<@${userIDGLOBAL}> is no longer in the discord!`) 
+                                .setTitle(`${client.user.username}`)
+                                .setColor(config.color)
+                                .setFooter({text:`${client.user.username} by Z-Dev`})
+                                const LinkButton = new ActionRowBuilder()
+                                .addComponents(
+                                    new ButtonBuilder()
+                                    .setLabel('Z-Dev Github')
+                                    .setEmoji('1083979315328335944')
+                                    .setURL('https://github.com/Zesty-ZDev')
+                                    .setStyle('Link'),
+                                );
+                                interaction.update({embeds:[ErrorUpdateEmbed], components:[LinkButton]})
+                            }
+                        }
+                 }
 
         }
     }
