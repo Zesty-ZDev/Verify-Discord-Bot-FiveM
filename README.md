@@ -27,7 +27,3 @@ You are likely receiving these errors because the bot does not have the permissi
 #### Why am I getting a DisallowedIntents error?
 
 The Bot requires the "SERVER MEMBERS INTENT" enabled in the discord developer portal. To do this head to the developer portal and select your application then select bot and scroll down to enable and disabled intents at this time however the bot only needs the "SERVER MEMBERS INTENT" enabled
-
-
-## 🚀 About Me
-Hi! I'm Zesty a snowboard instructor from Australia developing Discord Bots in my spare time between ski seasons... I am fully self taught thus the code will most likely look substandard to those who are professionals however it works and I suppose that's all that matters to most!
