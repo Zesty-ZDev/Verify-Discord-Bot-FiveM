@@ -20,7 +20,7 @@ module.exports = {
       .setFooter({text:`${client.user.username} by Z-Dev`})
 
       const VerifyRequest = new EmbedBuilder()
-      .setDescription(`<@${interaction.user.id}> has requested verification and has set their name to: \n\`${NickNameString}\` \n\n *Click the "Verify" Button below to verify the user or click "Deny" to notify the user something is wrong * `) 
+      .setDescription(`<@${interaction.user.id}> has requested verification and has set their name to: \n\`${NickNameString}\` \n\n *Click the "Verify" Button below to verify the user or click "Deny" to notify the user something is wrong* `) 
       .setTitle(`${client.user.username}`)
       .setColor(config.color)
       .setFooter({text:`${client.user.username} by Z-Dev`})
