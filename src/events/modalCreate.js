@@ -8,13 +8,21 @@ module.exports = {
 //Nickname Modal Submit
         if (!interaction.isModalSubmit()) return;
         if (interaction.customId === 'VerifyModal') {
-            let CharacterNameValue = interaction.fields.getTextInputValue('CharacterNameTextInput')
+            let CharacterNameValuePRECAP = interaction.fields.getTextInputValue('CharacterNameTextInput')
+
+            const CharNameARRAY = CharacterNameValuePRECAP.split(' ')
+            for (var i = 0; i < CharNameARRAY.length; i++) {
+                CharNameARRAY[i] = CharNameARRAY[i].charAt(0).toUpperCase() + CharNameARRAY[i].slice(1);
+            
+            }
+            let CharacterNameValue = CharNameARRAY.join(' ');
+
             let SteamNameValue = interaction.fields.getTextInputValue('SteamNameTextInput')
 
             let NickNameString = `${CharacterNameValue} [${SteamNameValue}]`
 
       const VerifyEmbed = new EmbedBuilder()
-      .setDescription(`Your server profile is now set to: \n${NickNameString} \n\n *You will be verified once a staff membed accepts the request!*`) 
+      .setDescription(`Your server profile is now set to: \n${NickNameString} \n\n *You will be verified once a staff member accepts the request!*`) 
       .setTitle(`${client.user.username} | Z-Dev`)
       .setColor(config.color)
       .setFooter({text:`${client.user.username} by Z-Dev`})
