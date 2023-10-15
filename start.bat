@@ -1,4 +1,5 @@
 @echo off
+CMD /C npm i
 echo Starting..
 :main
 node .
