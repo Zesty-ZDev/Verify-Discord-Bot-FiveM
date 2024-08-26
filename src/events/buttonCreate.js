@@ -1,6 +1,6 @@
 const { EmbedBuilder, InteractionType,ButtonBuilder, TextInputStyle, TextInputBuilder, ModalBuilder, ActionRowBuilder } = require("discord.js");
 const { readdirSync } = require("fs");
-const config = require(`../../config.json`)
+const config = require(`../../config.js`)
 module.exports = {
     name: 'interactionCreate',
     execute: async (interaction) => {
@@ -69,6 +69,18 @@ module.exports = {
                                 interaction.update({embeds:[VerifyButtonUpdateEmbed], components:[LinkButton]})
                                 });
 
+
+                                const AcceptNotifyEmbed = new EmbedBuilder()
+                           .setDescription(`<@${userID}> you have been verified and can now access the community`) 
+                           .setTitle(`${client.user.username}`)
+                           .setColor(config.color)
+                           .setFooter({text:`${client.user.username} by Z-Dev`})
+
+
+                           client.users.send(userID,{embeds:[AcceptNotifyEmbed]})
+                           .catch (() => interaction.channel.send({content: `<@${userID}> could not be contacted via DM's thus they could not be informed of the acceptance`}))
+
+
                             } 
                             else{
                                 const ErrorUpdateEmbed = new EmbedBuilder()
@@ -92,11 +104,11 @@ module.exports = {
                         if (interaction.isButton()) {
                             if (interaction.customId.includes(`ButtonDenyEntryStaff-`)) {
                                 let guild = client.guilds.cache.get(interaction.guild.id)
-                                global.userIDGLOBAL = interaction.customId.slice(21)
+                                const UserID = interaction.customId.slice(21)
                                 guild.members.fetch()
-                                if (guild.members.cache.has(userIDGLOBAL)){
+                                if (guild.members.cache.has(UserID)){
                                 const DenyReason = new ModalBuilder()
-                            .setCustomId('DenyStaffModal')
+                            .setCustomId(`DenyStaffModal-${UserID}`)
                             .setTitle('Denial Reason');
 
                         const DenialReasonInput = new TextInputBuilder()
@@ -110,7 +122,7 @@ module.exports = {
                             }
                             else{
                                 const ErrorUpdateEmbed = new EmbedBuilder()
-                                .setDescription(`<@${userIDGLOBAL}> is no longer in the discord!`) 
+                                .setDescription(`<@${UserID}> is no longer in the discord!`) 
                                 .setTitle(`${client.user.username}`)
                                 .setColor(config.color)
                                 .setFooter({text:`${client.user.username} by Z-Dev`})

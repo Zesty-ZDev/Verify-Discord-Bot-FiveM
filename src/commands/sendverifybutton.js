@@ -1,6 +1,6 @@
 const { EmbedBuilder, ButtonBuilder, ActionRowBuilder, PermissionsBitField, PermissionFlagsBits, Options, ModalBuilder, TextInputBuilder, TextInputStyle } = require("discord.js");
 const { SlashCommandBuilder } = require("@discordjs/builders");
-const config = require(`../../config.json`)
+const config = require(`../../config.js`)
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("sendverifybutton")

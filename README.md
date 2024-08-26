@@ -8,17 +8,21 @@ Join [Here](https://discord.gg/EV9cpmp6qf) for support
 
 ## FAQ
 
-#### What is "staffchannel" in the config.json?
+#### What is "staffchannel" in the config.js?
 
 This determines the channel that staff use to accept or deny the verification request sent from the users wishing to verify!
 
-#### What is "roletoremove" &  "roletoadd" in the config.json?
+#### What is "roletoremove" &  "roletoadd" in the config.js?
 
 This will set the role/s the bot will remove or/and give to the user once the staff press the "Verify user" button 
 
-#### What is "color" in the config.json?
+#### What is "color" in the config.js?
 
 This sets the color of all the embeds the bot will send including the "Verify" button embed and the staff request embeds, this value has to be a color hex for example "#9aaae3"
+
+#### What is "autoverify" in the config.js ?
+
+This value is a true/false (bool) value and when set to true will allow users to verify themselves without any staff approval, when set to false the system requires all names to be verified with staff.
 
 #### Why am I getting permission errors?
 
