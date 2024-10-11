@@ -87,7 +87,7 @@ else{
                //Deny Reason Modal Submit
        if (!interaction.isModalSubmit()) return;
        if (interaction.customId.includes('DenyStaffModal-')) {
-        const UserID = customId.slice(15)
+        const UserID = interaction.customId.slice(15)
            let reasondeny = interaction.fields.getTextInputValue('DenialReasonTextInput')
                            const DenyNotifyEmbed = new EmbedBuilder()
                            .setDescription(`<@${UserID}> you were denied from the verification for the reason below:\n ${reasondeny}`) 
